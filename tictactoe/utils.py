@@ -1,3 +1,5 @@
+import random
+
 POSSIBLE_WINNING_ROWS = (
         (1, 2, 3),  # top row of board
         (4, 5, 6),  # center row of board
@@ -36,4 +38,6 @@ def board_full(squares):
     
 def game_over(squares):
     return board_full(squares) or someone_won(squares)
-    
+
+def computer_move(squares):
+    return random.choice(unused_squares(squares))
