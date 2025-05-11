@@ -1,8 +1,10 @@
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import flash, Flask, redirect, render_template, request, session, url_for
+from tictactoe.utils import game_over
 import os
 
 app = Flask(__name__)
 app.secret_key = os.urandom(16)
+
 
 @app.before_request
 def initialize_session():
@@ -15,6 +17,11 @@ def index():
     
 @app.route('/play')
 def play():
+    squares = session['squares']
+    print(game_over(squares))
+    if game_over(squares):
+        flash('Game over. Thanks for playing!', 'success')
+        return redirect(url_for('index'))
     return render_template('play.html')
     
 @app.route('/verify', methods=["POST"])
