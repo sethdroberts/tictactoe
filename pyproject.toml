@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "attendance"
+version = "0.1.0"
+description = "A simple app to convert Google Meet timesheets into attendance records"
+authors = ["Seth Roberts <sethknock@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = "^3.0.0"
+gunicorn = "^21.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
