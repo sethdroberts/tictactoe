@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Getting started"
+    return "Getting started with tic tac toe"
     
 if __name__ == "__main__":
     if os.environ.get('FLASK_ENVIRON') == 'production':
