@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    {{ session.squares }}
+    
+    <form action="{{ url_for('verify') }}" method="post">
+        <div>
+            <label for="new_square">Mark a new square:</label>
+        </div>
+        <div>
+            <input type="text" name='new_square'>
+            <input type="submit" value="Mark Square">
+        </div>
+    </form>
+    
+{% endblock %}

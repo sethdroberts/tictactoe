@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Tic Tac Toe</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/application.css') }}">
+  </head>
+  <body>
+    <header>
+        {% block header_links %}
+        <!-- Filled in by the `header_links` block from another template file -->
+        {% endblock %}
+    </header>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <p class="flash">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <main>
+      {% block content %}
+      <!-- Filled in by the `content` block from another template file -->
+      {% endblock %}
+    </main>
+  </body>
+</html>
